@@ -59,13 +59,13 @@ class _UnitConverterScreenState extends ConsumerState<UnitConverterScreen> {
               label: Text(cat.name.toUpperCase()),
               selected: isSelected,
               onSelected: (_) => ref.read(unitConverterProvider.notifier).setCategory(cat),
-              selectedColor: AppTheme.primaryColor.withOpacity(0.2),
+              selectedColor: AppTheme.primaryColor.withValues(alpha: 0.2),
               checkmarkColor: AppTheme.primaryColor,
               labelStyle: TextStyle(
                 color: isSelected ? AppTheme.primaryColor : Colors.white54,
                 fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
               ),
-              backgroundColor: Colors.white.withOpacity(0.05),
+              backgroundColor: Colors.white.withValues(alpha: 0.05),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
                 side: BorderSide(
@@ -150,7 +150,7 @@ class _UnitConverterScreenState extends ConsumerState<UnitConverterScreen> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.info_outline, color: AppTheme.primaryColor.withOpacity(0.5), size: 20),
+          Icon(Icons.info_outline, color: AppTheme.primaryColor.withValues(alpha: 0.5), size: 20),
           const SizedBox(width: 12),
           Flexible(
             child: Text(

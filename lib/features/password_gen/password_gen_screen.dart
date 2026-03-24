@@ -156,6 +156,7 @@ class _PasswordGenScreenState extends ConsumerState<PasswordGenScreen> {
           max: 32,
           divisions: 26,
           activeColor: AppTheme.primaryColor,
+          thumbColor: AppTheme.primaryColor,
           onChanged: (val) => ref.read(passwordProvider.notifier).setLength(val),
         ),
       ],
@@ -167,7 +168,7 @@ class _PasswordGenScreenState extends ConsumerState<PasswordGenScreen> {
       title: Text(label, style: const TextStyle(fontSize: 14)),
       value: value,
       onChanged: onChanged,
-      activeColor: AppTheme.primaryColor,
+      activeThumbColor: AppTheme.primaryColor,
       contentPadding: EdgeInsets.zero,
     );
   }
@@ -184,7 +185,7 @@ class _PasswordGenScreenState extends ConsumerState<PasswordGenScreen> {
             borderRadius: BorderRadius.circular(15),
           ),
           elevation: 10,
-          shadowColor: AppTheme.primaryColor.withOpacity(0.5),
+          shadowColor: AppTheme.primaryColor.withValues(alpha: 0.5),
         ),
         onPressed: _generatePassword,
         child: const Text(
